@@ -179,6 +179,8 @@ git在存储文件时，它每一次代码提交都会创建与之对应的节�
 
 远程仓库可以被多人同时访问使用，方便咱共同使用，在工作中，git服务器一般由公司内部搭建，咱学习阶段，直接使用一些公共git仓库，，目前常用的有两锅，gitHub（远程git库），gitee（码云）
 
+github操作
+
 ```pash
 git remote add origin https://github.com/Shen-index/htmlcss.git
 #git remote add <remote name> 后面跟地址
@@ -187,18 +189,57 @@ git branch -M main
 #修改分支的名字为main
 
 git push -u origin main
-#git push 将代码上穿到服务器上
+#git push 将代码上传到服务器上
 ```
 
 
 
-- gitee操作
+gitee操作
 
-  ```pash
-  
-  git remote add gitee https://gitee.com/loser--shen/html.git
-  
-  git push -u origin master
-  ```
+```pash
 
-  
+git remote add gitee https://gitee.com/loser--shen/html.git
+#git remote add <remote name> 后面跟地址
+
+git push -u origin master
+#git push 将代码上传到服务器上
+```
+
+
+
+
+
+## 6.远程库的操作
+
+``` pash
+git remote #列出当前的关联远程库
+
+git remote add <远程库名> <url> #关联远程仓库
+
+git remote remove <库名> #删除远程库
+
+git push -u <远程库名> <分支名> #向远程仓库推送代码，并和当前分支关联
+
+git push <远程库> <本地分支> <分支名> #在远程库中添加一个新的分支
+
+git clone <url> #从远程下载分支（代码）
+
+git clone <url> <name>#从远程下载d（代码）
+
+git push #推送远程库
+
+git fatch #从远程仓库下载所有代码，但它不会将代码和自己的分支合并
+	#使用fatch拉取代码后，咱得手动将代码进行合并
+	
+git pull #从服务器自动拉取代码并自动合并
+
+
+#如果本地库的版本低于远程库，push默认是推不上去的，
+	需要推送，那么本地库和远程库版本一致
+	
+```
+
+
+
+#在推送代码时，要先从远程库中拉取最新的代码
+
